@@ -6,7 +6,7 @@ from flask import escape, request, session
 # Success       :   '0'
 # Unknown Error :   '1'
 # Known Error   : '1XY' (X: Function ID, Y: Section ID in Function)
-def make_result(msg, code=None):
+def make_result(msg, codes=None):
     if codes is None:
         codes = []
 
