@@ -53,7 +53,7 @@ def upload_key(form):
         if r['code'] not in ['0', '111']:
             return raw_r
 
-        uid = r['msg'].strip().split()[-1]
+        uid = session['uid']
 
         q = 'SELECT lastname, firstname, email FROM user WHERE uid=?'
         d = [uid]
