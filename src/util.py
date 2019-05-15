@@ -6,7 +6,10 @@ from flask import escape, request, session
 # Success       :   '0'
 # Unknown Error :   '1'
 # Known Error   : '1XY' (X: Function ID, Y: Section ID in Function)
-def make_result(msg, codes=[]):
+def make_result(msg, code=None):
+    if codes is None:
+        codes = []
+
     if codes != ['0']:
         codes.insert(0, '1')
 
